@@ -286,6 +286,7 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.238);
     max-width: 400px;
     transition: .4s;
+    position: relative;
 }
 .skillBox:hover {
     cursor: pointer;
@@ -316,14 +317,85 @@ nav a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.516);
 }
 
+.skillBox:hover  .skillsList  {
+    top: 50%;
+    left: 0;
+    transform: translate( -100%, -50%); 
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+}
+.skillBox:hover .progressLine {
+    animation: zeroToProgress 3s normal;
+}
+.skillsList{
+    background-color: #4a4a4a;
+    max-width: max-content;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate( -100%, -50%);
+    z-index: -222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.238);
+    
+    opacity: 0;
+    width: 0;
+    color: white !important;
+}
+.skillsList ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    height: 100%;
+}
+.skillsList ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    width: 30px;
+    
 
-
-
-
-
-
-
-
+}
+.skillsList ul li .line1 {
+  width: 20px;
+  height: 100%;
+  background-color: rgb(179, 179, 179);
+  position: relative;
+}
+.progressLine{
+    transition: 1s;
+    width: 20px;
+    background: blueviolet;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.progressLine1 {
+    height: 95%;
+}
+.progressLine2 {
+    height: 90%;
+}
+.progressLine3 {
+    height: 75%;
+}
+.progressLine4 {
+    height: 55%;
+}
+@keyframes zeroToProgress {
+    0% {
+        height: 0;
+    }
+}
 
 
 
